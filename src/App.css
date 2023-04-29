@@ -1,38 +1,56 @@
 .App {
-  text-align: center;
+    margin: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.font {
+    font-size: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.issues-form {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 800px;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.issues-column {
+    border: 2px solid red;
+    flex: auto;
+    background-color: rgb(199, 199, 199);
+    height: 550px;
 }
 
-.App-link {
-  color: #61dafb;
+.center-column {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.issues-list-item {
+    border: 2px solid red;
+    margin: 17px;
+    height: 80px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.list-name {
+    text-align: center;
+    flex: auto;
+    font-size: 18px;
+}
+
+.item-spn {
+    display: block;
+    color: grey;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.spn {
+    margin-right: 50px;
+    color: rgb(50, 50, 255);
+    font-size: 15px;
 }
