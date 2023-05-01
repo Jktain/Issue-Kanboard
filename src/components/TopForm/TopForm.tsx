@@ -1,29 +1,74 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './TopForm.css';
+import { IssuesFromApi, IssuesInApp } from '../../Models';
 
 export const TopForm = () => {
 
-    const token:string = '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',
-          url:string = 'https://github.com/microsoft/vscode';
+    const [URL, setURL] = useState('');
 
-    const IssueApi:string = `https://api.github.com/repos${url.slice(18)}/issues`; 
-    // console.log(IssueApi);'
-    // const parts = url.split('/')[3];
-    // const owner = parts[3];
-    console.log(`https://github.com/${url.split('/')[3]}`);
+    const changeInput = (event:React.ChangeEvent<HTMLInputElement>) => {
+        setURL(event.target.value);
 
-    fetch(IssueApi, {
-        headers: {
-        Authorization: `Bearer ${token}`
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  
+    }
+
+    // const url:string = 'https://github.com/microsoft/vscode';
+    // let issueApi:string = '';
+
+    // console.log(`https://github.com/${url.split('/')[3]}`);
+
+    let issueList:IssuesFromApi[] = [];
+
+    function getDataFromAPI(): Promise<IssuesFromApi[]> {
+        return fetch(`https://api.github.com/repos${URL.slice(18)}/issues`)
+                .then(response => response.json())
+                .then(data => {
+                    const objMass: IssuesFromApi[] = data.map((item: any) => {
+                        const obj: IssuesFromApi = {
+                            id: item.id,
+                            state: item.state,
+                            title: item.title,
+                            number: item.number,
+                            updated_at: item.updated_at,
+                            assignee: item.assignee,
+                            comments: item.comments
+                        };
+                        return obj;
+                    });
+                    return objMass;
+        });
+    }
+
+    fetch(`https://api.github.com/repos${URL.slice(18)}`)
+     .then(response => response.json())
+     .then(data => console.log(data))
+
+    const getUrl = (event:React.FormEvent) => {
+        event.preventDefault();
+        console.log(URL);
+        getDataFromAPI()
+            .then(data => {
+                issueList.push(...data);
+                console.log(issueList); // тут виводимо масив з обробленими даними
+            })
+            .catch(error => console.error(error));
+    }
+        
     return(
-        <div className='top-form'>
-            <input className='inp font' placeholder='Enter repo URL'></input>
-            <button className='btn font'>Load issues</button>
-        </div>
+        <form onSubmit={getUrl}
+            className='top-form'
+            >
+            <input 
+                className='inp' 
+                placeholder='Enter repo URL'
+                value={URL}
+                onChange={changeInput}
+            />
+
+            <button 
+                className='btn'
+                type="submit">
+                Load issues
+            </button>
+        </form>
     )
 }

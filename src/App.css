@@ -4,6 +4,7 @@
 
 .font {
     font-size: 15px;
+    margin-left: 30px;
 }
 
 .issues-form {
@@ -49,8 +50,8 @@
     margin-top: 5px;
 }
 
-.spn {
-    margin-right: 50px;
+.a {
     color: rgb(50, 50, 255);
     font-size: 15px;
+    text-decoration: none;
 }

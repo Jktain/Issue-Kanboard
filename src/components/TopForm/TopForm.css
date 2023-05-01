@@ -4,6 +4,7 @@
 }
 
 .btn {
+    font-size: 15px;
     margin-top: 5px;
     margin-left: 10px;
     width: 110px;
@@ -16,6 +17,7 @@
     width: 670px;
     border-color: red;
     height: 20px;
+    font-size: 15px;
 }
 
 .font {
