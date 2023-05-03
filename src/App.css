@@ -1,5 +1,6 @@
 .App {
     margin: 100px;
+    width: 800px; 
 }
 
 .font {
@@ -11,8 +12,6 @@
     margin-top: 12px;
     margin-bottom: 10px;
     display: flex;
-    width: 800px;
-    
 }
 
 .issues-column {
