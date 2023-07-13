@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const PathStars = () => {
-    const URL:string = 'https://github.com/microsoft/vscode';
+    const URL:string = 'https://github.com/facebook/react';
 
     const urlEdit = (url:string, number:number) => {
         return(`${url.split('/')[number][0].toUpperCase()}${url.split('/')[number].substring(1).toLowerCase()}`);   

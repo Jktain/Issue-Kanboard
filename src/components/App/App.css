@@ -18,12 +18,8 @@
     border: 2px solid red;
     flex: auto;
     background-color: rgb(199, 199, 199);
-    height: 550px;
-}
-
-.center-column {
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 570px;
+    width: 270px;
 }
 
 .issues-list-item {

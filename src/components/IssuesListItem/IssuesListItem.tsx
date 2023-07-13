@@ -12,8 +12,8 @@ export const IssuesListitem = ({children}:IssueProps) => {
     return (
         <div className='issues-list-item'>
             <span>{children.title}</span>
-            <span className='item-spn'>#{children.number}   {children.updated_at}</span>
-            <span className='item-spn'>{children.assignee_login}   |    {children.comments} comments</span>
+            <span className='item-spn'>#{children.number}  &nbsp;  {children.updated_at}</span>
+            <span className='item-spn'>{children.assignee_login}  &nbsp; | &nbsp;   Comments: {children.comments} </span>
         </div>
     )
 }

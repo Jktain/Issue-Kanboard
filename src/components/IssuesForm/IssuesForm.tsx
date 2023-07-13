@@ -1,11 +1,10 @@
-import { DropResult, DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-import { Mockdata } from '../../data/Mockdata'
-import { useState } from 'react'
-import {IssuesListitem} from '../IssuesListItem/IssuesListItem'
+import { DropResult, DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { useState } from 'react';
+import { IssuesListitem } from '../IssuesListItem/IssuesListItem';
+import { getData } from '../GetURL/GetURL';
 
 const IssuesForm = () => {
-    const [data, setData] = useState(Mockdata);
-
+    const [data, setData] = useState(getData('https://github.com/facebook/react'));
     const onDragEnd = (result:DropResult) => {
         if (!result.destination) return;
         const { source, destination } = result;
@@ -40,7 +39,6 @@ const IssuesForm = () => {
         console.log(data)
     }
 
-
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <div className="issues-form">
@@ -51,12 +49,12 @@ const IssuesForm = () => {
                             droppableId={section.id}
                         >
                             {(provided) => (
-                                <div className="issues-column"
+                                <div 
                                     {...provided.droppableProps}
                                     // className='issues-column'
                                     ref={provided.innerRef}
                                 >
-                                    <div>
+                                    <div className='issues-column'>
                                         {
                                             section.tasks.map((task, index) => (
                                                 <Draggable

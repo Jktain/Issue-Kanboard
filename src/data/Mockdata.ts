@@ -11,6 +11,7 @@ export const Mockdata:Kanboard[] = [
                 comments:2,
                 number:314,
                 updated_at:'3 days ago',
+                state:'open'
             },
             {
                 id:"2",
@@ -18,7 +19,8 @@ export const Mockdata:Kanboard[] = [
                 assignee_login: 'wasder',
                 comments:3,
                 number:315,
-                updated_at:'2 days ago'
+                updated_at:'2 days ago',
+                state:'open'
             }
         ]
     },
@@ -31,7 +33,8 @@ export const Mockdata:Kanboard[] = [
                 assignee_login:'sawder',
                 comments:2,
                 number:316,
-                updated_at:'3 days ago'
+                updated_at:'3 days ago',
+                state:'open'
             },
             {
                 id:"4",
@@ -39,7 +42,8 @@ export const Mockdata:Kanboard[] = [
                 assignee_login: 'derwas',
                 comments:4,
                 number:317,
-                updated_at:'3 days ago'
+                updated_at:'3 days ago',
+                state:'open'
             }
         ]
     },
@@ -52,7 +56,8 @@ export const Mockdata:Kanboard[] = [
                 assignee_login:'der',
                 comments:2,
                 number:318,
-                updated_at:'3 days ago'
+                updated_at:'3 days ago',
+                state:'open'
             },
             {
                 id:"6",
@@ -60,7 +65,8 @@ export const Mockdata:Kanboard[] = [
                 assignee_login:'der',
                 comments:2,
                 number:312,
-                updated_at:'3 days ago'
+                updated_at:'3 days ago',
+                state:'open'
             }
         ]
     }
